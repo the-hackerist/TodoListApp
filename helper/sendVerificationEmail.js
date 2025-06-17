@@ -4,7 +4,7 @@ const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
 
 module.exports = async function sendVerificationEmail(email, token) {
-  const verificationUrl = `http://localhost:5173/auth/verify?token=${token}`;
+  const verificationUrl = `https://ecniv-todo-list.netlify.app/auth/verify?token=${token}`;
 
   const msg = {
     to: email,
