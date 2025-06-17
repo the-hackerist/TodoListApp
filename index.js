@@ -8,6 +8,8 @@ require("dotenv").config();
 const todosRoute = require("./routes/todosRoute");
 const authRoute = require("./routes/authRoute");
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 
 app.use(express.json());
@@ -33,8 +35,8 @@ mongoose
     `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.75bxk.mongodb.net/${process.env.MONGO_DATABASE}`
   )
   .then(() => {
-    app.listen(process.env.SERVER_PORT, () => {
-      console.log(`Server is live on port ${process.env.SERVER_PORT}`);
+    app.listen(PORT, () => {
+      console.log(`Server is live on port ${PORT}`);
     });
   })
   .catch((err) => console.log(err));
