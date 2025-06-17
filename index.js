@@ -17,6 +17,10 @@ app.use(cors());
 app.use(helmet());
 app.use(compression());
 
+app.get("/", (req, res) => {
+  res.json({ message: "Api server is working!" });
+});
+
 app.use("/todos", todosRoute);
 app.use("/auth", authRoute);
 
